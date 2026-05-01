@@ -10,7 +10,7 @@ def calculate_cohens_d(group1, group2):
     pooled_std = np.sqrt(((n1 - 1) * var1 + (n2 - 1) * var2) / (n1 + n2 - 2))
     
     cohens_d = (mean1 - mean2) / pooled_std
-    pass
+    return cohens_d
 
 def interpret_cohens_d(d):
     d = abs(d)
