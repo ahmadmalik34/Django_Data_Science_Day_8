@@ -1,6 +1,5 @@
 import numpy as np
 from scipy import stats
-import math
 
 def calculate_cohens_d(group1, group2):
     mean1, mean2 = np.mean(group1), np.mean(group2)
