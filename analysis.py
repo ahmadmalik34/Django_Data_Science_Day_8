@@ -3,22 +3,16 @@ from scipy import stats
 import math
 
 def calculate_cohens_d(group1, group2):
-    """
-    Calculate Cohen's d (effect size)
-    Formula: (mean1 - mean2) / pooled_std_dev
-    """
     mean1, mean2 = np.mean(group1), np.mean(group2)
     var1, var2 = np.var(group1, ddof=1), np.var(group2, ddof=1)
     n1, n2 = len(group1), len(group2)
     
-    # Pooled standard deviation
     pooled_std = np.sqrt(((n1 - 1) * var1 + (n2 - 1) * var2) / (n1 + n2 - 2))
     
     cohens_d = (mean1 - mean2) / pooled_std
     return cohens_d
 
 def interpret_cohens_d(d):
-    """Interpret the magnitude of effect size"""
     d = abs(d)
     if d < 0.2:
         return "negligible"
